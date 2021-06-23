@@ -1,5 +1,4 @@
-c1 = 55    # 第一艘船的容量
-c2 = 35    # 第二艘船的容量
+
 w = [20,15,30,20]    # 每个货物对应重量
 Max = 0    # 初始化第一艘船中的当前最大载重量
 x = []    # 初始化中间解
@@ -14,9 +13,6 @@ def loading(s1,s2,w):
     global c2
     r = sum(w)    # 初始化未考虑的物品总重量
     x = [0] * len(w)
-    if c1 + c2 < r:
-        print('此问题无解')
-        return
     trace(0)
     print('第一艘船的装载量为:',Max)
     print('第一艘船装载的货物为:',end='')
@@ -46,4 +42,4 @@ def trace(i):    # 回溯函数
         x[i] = 0    # 不考虑此物品
         trace(i+1)
     r += w[i]
-loading(c1,c2,w)
+
